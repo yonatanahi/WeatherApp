@@ -11,11 +11,10 @@ app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/weatherDB', { useNewUrlParser: true , useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost/weatherDB', { useNewUrlParser: true , useUnifiedTopology: true })
 
 app.use('/', api)
 
-const port = 4200
-app.listen(port, function () {
-    console.log(`Running on port ${port}`)
-})
+const PORT = 4200
+app.listen(process.env.PORT || PORT)
+
