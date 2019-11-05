@@ -1,0 +1,50 @@
+body{
+    background-color: skyblue;
+}
+
+.city{
+    display: grid;
+    grid-template-areas: 'n n'
+                         'c i'
+                         'b b';
+    padding: 10px;
+    margin: 10px;
+    background-color: aqua;
+    border-radius: 5px;
+    box-shadow: 5px 5px whitesmoke;
+}
+
+#search{
+    background-color: khaki;
+}
+
+.button{
+    background-color: floralwhite; 
+    grid-area: b;
+}
+
+.name{
+    grid-area: n;
+    text-align: center;
+}
+
+.temperature{
+    grid-area: c;
+    text-align: center;
+}
+
+img{
+    grid-area: i;
+    text-align: start;
+    justify-content: center;
+}
+
+.condition{
+    grid-area: i;
+    text-align: end;
+    justify-content: center;
+}
+
+#input{
+    text-align: center;
+}
