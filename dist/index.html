@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="input">
@@ -22,6 +23,7 @@
                 <p class="temperature">{{temperature}} &#8451</p>
                 <p class="condition">{{condition}}</p>
                 <img src="http://openweathermap.org/img/wn/{{conditionPic}}@2x.png" alt="">
+                <i class="fa fa-refresh" aria-hidden="true"></i>
                 {{#if _id}}
                     <button class="remove button">Remove</button>
                 {{/if}}

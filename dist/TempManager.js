@@ -18,13 +18,12 @@ class TempManager{
             conditionPic: data.weather[0].icon
         
     }    
-        this.cityData.push(city)
+        return city
     }
 
 
     saveCity = function (cityName) {        
         let city = this.cityData.find(c => c.name === cityName) 
-        console.log(city)  
         $.post('/city', city)
     }
 
