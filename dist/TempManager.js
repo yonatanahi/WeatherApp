@@ -11,15 +11,19 @@ class TempManager{
 
     getCityData = async function (cityName) {
         let data = await $.get(`/city/${cityName}`) 
-        let city = {
-            name: data.name,
-            temperature: data.main.temp,
-            condition: data.weather[0].main,
-            conditionPic: data.weather[0].icon
-        
-    }    
-        return city
+        if(data.messsage !== undefined){
+            let city = {
+                name: data.name,
+                temperature: data.main.temp,
+                condition: data.weather[0].main,
+                conditionPic: data.weather[0].icon
+                }    
+            return city
+        }else{
+            return "city not found"
+        }
     }
+    
 
 
     saveCity = function (cityName) {        

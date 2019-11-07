@@ -8,13 +8,22 @@ const loadPage = async function () {
 
 
 const handleSearch = async function(){
-    let cityName = $('input').val()    
-    cityName = cityName[0].toUpperCase() + cityName.slice(1)
-    let city = temp_manager.cityData.find(c => c.name === cityName)
-    if(!city){
-        let city = await temp_manager.getCityData(cityName)     
-        temp_manager.cityData.push(city)       
-        renderer.renderData(temp_manager.cityData)
+    let cityName = $('input').val()
+    $('input').val("") 
+    if(cityName.length > 0){
+        cityName = cityName[0].toUpperCase() + cityName.slice(1)
+        let city = temp_manager.cityData.find(c => c.name === cityName)
+        if(!city){
+            let city = await temp_manager.getCityData(cityName)             
+            if(city != "city not found"){
+                temp_manager.cityData.push(city)       
+                renderer.renderData(temp_manager.cityData)
+            }else{
+                console.log("city not found")
+            }
+        }
+    }else{
+        console.log("empty string");
     }
 }
 
