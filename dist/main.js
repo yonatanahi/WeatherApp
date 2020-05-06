@@ -20,6 +20,7 @@ const handleSearch = async function(){
                 renderer.renderData(temp_manager.cityData)
             }else{
                 console.log("city not found")
+                
             }
         }
     }else{
@@ -32,6 +33,7 @@ $('#cities').on('click', '.save', async function (){
     let cityName = $(this).closest('.city').find('.name').text()    
     await temp_manager.saveCity(cityName)
     renderer.renderData(temp_manager.cityData)
+    console.log("1")
 })
 
 
